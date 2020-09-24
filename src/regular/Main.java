@@ -56,4 +56,20 @@ public class Main {
 
 		}
 	}
+
+	void endOfFile(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int count = 0;
+		String s = "";
+		while (s != null) {
+			try {
+				s = scan.nextLine();
+				count++;
+				System.out.println(count + " " + s);
+			} catch (Exception e) {
+				break;
+			}
+		}
+		scan.close();
+	}
 }
