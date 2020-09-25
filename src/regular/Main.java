@@ -1,6 +1,8 @@
 package regular;
 
 import java.util.Scanner;
+import java.util.*;//locate here
+import java.text.NumberFormat;
 import java.time.LocalDate;
 
 public class Main {
@@ -90,6 +92,29 @@ public class Main {
         java.time.DayOfWeek dayOfWeek = localDate.getDayOfWeek();
         return "" + dayOfWeek;
     }
+
+    void currency(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		double payment = scanner.nextDouble();
+		scanner.close();
+
+		NumberFormat F = NumberFormat.getCurrencyInstance(Locale.FRANCE);
+		NumberFormat US = NumberFormat.getCurrencyInstance();
+		NumberFormat C = NumberFormat.getCurrencyInstance(Locale.CHINA);
+		NumberFormat I = NumberFormat.getCurrencyInstance(new Locale("en", "in"));
+
+		String france=F.format(payment);
+		String india=I.format(payment);
+		String china=C.format(payment);
+		String us=US.format(payment);
+
+		// Write your code here.
+
+		System.out.println("US: " + us);
+		System.out.println("India: " + india);
+		System.out.println("China: " + china);
+		System.out.println("France: " + france);
+	}
 
 }
 
