@@ -1,4 +1,5 @@
 package OOP_Questions;
+import java.util.*;
 
 public class GG {
 }
@@ -19,5 +20,17 @@ class MyCalculator implements AdvancedArithmetic{
             count++;
         }
         return result;
+    }
+}
+
+class IteratorObj {//Java Iterator class can help you to iterate through every element in a collection
+    static Iterator func(ArrayList mylist) {
+        Iterator it = mylist.iterator();
+        while (it.hasNext()) {
+            Object element = it.next();
+            if (element instanceof String)//Hints: use instanceof operator
+                break;
+        }
+        return it;
     }
 }
